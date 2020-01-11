@@ -58,7 +58,10 @@ null_record = {
 
 output_re = re.compile('|'.join(format_map.keys()))
 
-default_geoipconf = './GeoIPData/GeoIP.conf'
+if platform.system() == 'Windows':
+    default_geoipconf = os.environ['SYSTEMDRIVE'] + '\\ProgramData\\MaxMind\\GeoIPUpdate\\GeoIP.conf'
+else:
+    default_geoipconf = './GeoIPData/GeoIP.conf'
 default_format_string = '"%ip","%lat","%lon","%asnum","%asname"'
 
 # handle command line options
