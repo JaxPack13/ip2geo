@@ -44,6 +44,7 @@ for tag in format_map.keys():
     format_map_help_string += '%10s : %s\n' % (tag.replace('%','%%'), format_map[tag][1])
 
 null_record = {
+    'ipaddress': None,
     'city': None,
     'region_code': None,
     'country_name': None,
