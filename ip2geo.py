@@ -110,7 +110,7 @@ try:
     storagedir = os.path.abspath(os.path.join(os.path.dirname(args.geoipconf), databasedir))
 except AttributeError:
     # this is the default, from the geoipupdate package
-    if platform.system == 'Windows':
+    if platform.system() == 'Windows':
         storagedir = os.environ['SYSTEMDRIVE'] + '\\ProgramData\\MaxMind\\GeoIPUpdate\\GeoIP'
     else:
         storagedir = '/usr/local/share/GeoIP'
